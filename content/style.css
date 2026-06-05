@@ -1,0 +1,93 @@
+.addon-toggle-btn {
+    position: fixed;
+    right: 18px;
+    top: 80px;
+    padding: 8px 12px;
+    background: rgba(18,18,18,0.94);
+    color: #eee;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    z-index: 999999;
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
+    font-size: 13px;
+    transition: opacity 0.3s ease-in-out, background 0.3s;
+}
+
+.addon-panel {
+    position: fixed;
+    right: 18px;
+    top: 80px;
+    width: 480px;
+    max-width: calc(100vw - 40px);
+    background: rgba(18,18,18,0.94);
+    color: #eee;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    z-index: 999999;
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
+    font-size: 13px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+    max-height: 800px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.addon-panel.open {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.addon-header { padding:8px 10px; border-bottom:1px solid rgba(255,255,255,0.03); position: relative; }
+.addon-header-top { display: flex; justify-content: space-between; align-items: center; }
+.addon-header-left { display: flex; align-items: center; }
+.addon-title { font-weight:600; margin-right:8px; }
+.addon-controls { display:flex; gap:6px; align-items:center; }
+.addon-btn { background:transparent; border:1px solid rgba(255,255,255,0.06); padding:4px 8px; border-radius:6px; color:#ddd; cursor:pointer; }
+.addon-btn:hover { background:rgba(255,255,255,0.05); }
+
+/* 设置弹窗 */
+.addon-settings-popup {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background: rgba(28,28,28,0.98);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 10px 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+}
+.addon-settings-popup.open { display: flex; }
+.addon-settings-popup label { display: flex; align-items: center; gap: 6px; color: #ccc; cursor: pointer; }
+
+.addon-tabs { display:flex; gap:6px; padding:8px; background:rgba(0,0,0,0.03); border-bottom:1px solid rgba(255,255,255,0.02); }
+.addon-tab { padding:6px 10px; border-radius:4px; cursor:pointer; background:transparent; color:#ccc; }
+.addon-tab.active { background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); color:#fff; font-weight:600; }
+
+.addon-subtabs { display:flex; gap:6px; padding:4px 8px; background:rgba(0,0,0,0.015); border-bottom:1px solid rgba(255,255,255,0.02); flex-wrap: wrap;}
+.addon-subtab { padding:4px 8px; border-radius:4px; cursor:pointer; background:transparent; color:#aaa; font-size: 12px; transition: 0.2s; border: 1px solid transparent; }
+.addon-subtab:hover { color: #fff; }
+.addon-subtab.active { background:rgba(255,255,255,0.05); color:#fff; border: 1px solid rgba(255,255,255,0.1); }
+
+.addon-body { padding:10px; max-height:500px; overflow:auto; }
+table.addon-table { width:100%; border-collapse:collapse; margin-bottom: 6px; }
+table.addon-table th, table.addon-table td { padding:6px 8px; text-align:left; border-bottom:1px dashed rgba(255,255,255,0.03); font-size:13px; }
+table.addon-table th { color:#bbb; font-weight:600; }
+.addon-error { color:#ff8a8a; padding:6px; }
+.addon-toast { position:fixed; right:20px; bottom:20px; padding:8px 12px; background:#333; color:#fff; border-radius:6px; opacity:0; transition:0.2s; z-index:9999999; }
+.addon-toast.show { opacity:1; transform: translateY(-6px); }
+.addon-small { font-size:12px; color:#bbb; }
+.addon-date-red { color: #ff8a8a; font-weight: bold; }
+.addon-login-time { font-size: 11px; color: #aaa; margin-top: 4px; }
+.addon-external-links { display: flex; gap: 4px; margin-left: 10px; }
+.addon-external-links a { text-decoration: none; color: #aaa; font-size: 11px; padding: 2px 4px; border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; transition: color 0.2s, border-color 0.2s; }
+.addon-external-links a:hover { color: #fff; border-color: #fff; }
+.addon-raid-header { padding: 4px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; font-weight: bold; color: #ddd; display: inline-block; font-size: 12px; margin-bottom: 2px; }

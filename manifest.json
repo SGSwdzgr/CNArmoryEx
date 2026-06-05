@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "国服英雄榜速查",
+  "version": "4.3",
+  "description": "在魔兽国服英雄榜页面展示当前角色的史诗团本进度和简单战团成就进度统计",
+  "author": "电视卫士",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://webapi.blizzard.cn/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://wow.blizzard.cn/character/*"],
+      "css": ["content/style.css"],
+      "js": [
+        "content/data.js",
+        "content/ui.js",
+        "content/logic.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
